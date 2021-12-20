@@ -13,7 +13,7 @@
       />
     </div>
     <div class="login-button">
-      <button>Login</button>
+      <button @click="onClickLogin()">Login</button>
     </div>
     <div class="footer">
       <p>Powered By</p>
@@ -24,23 +24,21 @@
 
 
 <script>
+// import router from '../router/index'
+
 export default {
   name: "WelcomePage",
+  methods: {
+    onClickLogin() {
+      this.$router.push('login')
+    }
+  }
 };
 </script>
 
 
 <style scoped lang="scss">
 @import "../styles/common.scss";
-.welcome-page {
-  height: 100%;
-  background-image: url("../assets/images/welcome_page_background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  @include mobile {
-    height: 100vh;
-  }
-}
 .head {
   display: flex;
   justify-content: space-between;
@@ -88,7 +86,9 @@ export default {
   text-align: center;
   margin-top: 30px;
   padding: 30px 0px;
-  color: rgb(116, 144, 160);
+  p {
+    color: #606D79;
+  }
   @include mobile {
     width: 100%;
     position: fixed;
